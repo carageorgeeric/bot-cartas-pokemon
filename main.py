@@ -8,7 +8,7 @@ headers = {
     'Accept-Language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7'
 }
 
-def get_product_details(product_url: str) -> dict:
+def get_product_details_amazon(product_url: str) -> dict:
     product_details = {}
     page = requests.get(product_url, headers=headers)
     soup = BeautifulSoup(page.content, features='lxml')
@@ -27,7 +27,9 @@ def get_product_details(product_url: str) -> dict:
 
 for product in lista_produtos: 
     product_url = product["link"]
-    product_details = get_product_details(product_url)
+    product_details = get_product_details_amazon(product_url)
     print(product_details)
     time.sleep(3)
+
+
 

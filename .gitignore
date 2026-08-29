@@ -1,0 +1,21 @@
+#Preciso de alguma forma monitorar os precos 
+
+
+# Ideia 1 
+# Buscar o preco medio de cada produto e colocar no dicionario 
+# Fazer uma logica caso o preco seja menor em porcentagem que o valor registrado no dicionario 
+# tipo a partir de 30% pra cima alertar com uma mensagem 
+# a partir de 50% pra cima alertar com outra mensagem 
+# 30% pra baixo alerta mais simples 
+# so que nesse caso, de repente seria tambem uma boa de eu adicionar outros ecommerces e monitorar o preco em varios ecommerces de uma vez 
+
+
+# Ideia 2 - Preco abaixo do historico (Vou seguir com essa)
+# Posso inicialmente criar um banco de dados que salva os precos. 
+# Quando o preco ficar com uma porcentagem bem abaixa, Ele da um alerta
+# Roda de 5 em 5 minutos ou em um intervalo assim 
+# Mandar as respostas para o Telegram 
+
+
+# Ideia 3 - Mais para frente 
+# Monitorar outros sites e printar o valor de cada site tambem 
