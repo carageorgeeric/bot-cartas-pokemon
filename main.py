@@ -2,6 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 import time 
 from produtos import lista_produtos
+from database import cursor, conexao
+
+
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
@@ -25,11 +28,17 @@ def get_product_details_amazon(product_url: str) -> dict:
         print(f"Error fetching product details: {e}")
 
 
-for product in lista_produtos: 
-    product_url = product["link"]
+cursor.execute('SELECT link FROM banco_produtos')
+produtos_db = cursor.fetchall()
+conexao.close
+
+
+for product in produtos_db: 
+    product_url = product[0]
     product_details = get_product_details_amazon(product_url)
     print(product_details)
     time.sleep(3)
+
 
 
 
