@@ -29,7 +29,8 @@ Antes de rodar, crie a tabela `banco_produtos` com pelo menos as colunas:
 | coluna   | tipo         |
 |----------|--------------|
 | link     | texto        |
-| preços   | numérico     |
+| preco   | numérico     |
+| produto   | texto     |
 
 Configure a conexão em `database.py` de acordo com o banco que você está usando (SQLite, PostgreSQL, MySQL etc.).
 
