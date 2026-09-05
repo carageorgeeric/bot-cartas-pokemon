@@ -1,5 +1,7 @@
 ## Script em Python para monitoramento de preços de cartas pokemon e outros produtos
 
+![Demo do projeto](assets/demo.gif)
+
 ## Como funciona
 
 1. Os links dos produtos a monitorar ficam salvos numa tabela `banco_produtos` (colunas `link` e `preços`).
@@ -26,11 +28,11 @@ database.py     # conexão e cursor do banco (SQL)
 
 Antes de rodar, crie a tabela `banco_produtos` com pelo menos as colunas:
 
-| coluna   | tipo         |
-|----------|--------------|
-| link     | texto        |
-| preco   | numérico     |
-| produto   | texto     |
+| coluna  | tipo     |
+| ------- | -------- |
+| link    | texto    |
+| preco   | numérico |
+| produto | texto    |
 
 Configure a conexão em `database.py` de acordo com o banco que você está usando (SQLite, PostgreSQL, MySQL etc.).
 
