@@ -48,4 +48,4 @@ O script percorre todos os links salvos, busca o preço atual de cada um, e impr
 - Usa `time.sleep(3)` entre requisições pra reduzir risco de bloqueio; não há tratamento de captcha ou rate-limit mais robusto.
 - Requer um header de `User-Agent` válido para evitar bloqueio de bot.
 
-![demo](assets/demo.gif)
+(assets/demo.gif)
