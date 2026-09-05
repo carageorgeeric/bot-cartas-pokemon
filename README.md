@@ -47,4 +47,5 @@ O script percorre todos os links salvos, busca o preço atual de cada um, e impr
 - Depende da estrutura HTML atual da Amazon (`productTitle`, `a-price-whole`) — pode quebrar se a Amazon mudar o layout.
 - Usa `time.sleep(3)` entre requisições pra reduzir risco de bloqueio; não há tratamento de captcha ou rate-limit mais robusto.
 - Requer um header de `User-Agent` válido para evitar bloqueio de bot.
-  
+
+![demo](assets/demo.gif)
