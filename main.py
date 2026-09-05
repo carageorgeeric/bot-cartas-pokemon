@@ -26,18 +26,32 @@ def get_product_details_amazon(product_url: str) -> dict:
         return product_details
     except Exception as e:
         print(f"Error fetching product details: {e}")
+  
+
+def limpar_preco(preco_str: str) -> int: 
+    preco_limpo = preco_str.replace('.', '').replace(',', '.')
+    return int(float(preco_limpo))
 
 
-cursor.execute('SELECT link FROM banco_produtos')
+cursor.execute('SELECT link, preco, produto FROM banco_produtos')
 produtos_db = cursor.fetchall()
-conexao.close
+
+if __name__ == "__main__":
+    for product in produtos_db: 
+        product_url = product[0]
+        preco_antigo = int(product[1])
+        product_details = get_product_details_amazon(product_url)
+        preco_novo = limpar_preco(product_details['price'
+        ])
+        print(product_details)
+        if preco_novo < preco_antigo: 
+                    print(f'Desconto no {product[2]} de {preco_antigo} para {preco_novo}')
+        time.sleep(3)
 
 
-for product in produtos_db: 
-    product_url = product[0]
-    product_details = get_product_details_amazon(product_url)
-    print(product_details)
-    time.sleep(3)
+
+
+
 
 
 

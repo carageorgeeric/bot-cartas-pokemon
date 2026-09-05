@@ -24,14 +24,23 @@ def adicionar_produtos (produto, link, preco):
         conexao.commit()
         print(f'Produto {produto} adicionado com sucesso! ') 
     except sqlite3.Error as erro: 
-        print(f'Erro ao adicionar o produto!')
+        print(f'Erro ao adicionar o produto! {erro}')
 
+
+def remover_produtos(produto, num): 
+    try: 
+        cursor.execute(
+            'DELETE FROM banco_produtos WHERE id = ?', 
+            (num,)
+
+        )
+        conexao.commit()
+        print(f'produto{produto} removido com sucesso!')
+    except sqlite3.Error as erro: 
+        print(f'Erro ao remover o produto! {erro}')
 
 
 
 #adicionar_produtos('Combo Booster Evolucoes Prismaticas','https://www.amazon.com.br/Pok%C3%A9mon-Estampas-Ilustradas-Evolu%C3%A7%C3%B5es-Prism%C3%A1ticas/dp/B0DWT3X5NJ/ref=sr_1_5?crid=3NRK5IIDT3E3O&dib=eyJ2IjoiMSJ9.eAKL5QsSFSDW6JZlA-wj3FKx3nL9LX-BsOU5LveJLp7-YPSyP-QyupMAAN3ivUyJ26tHMZjl7iLYK8DPHYVIG-LRPbCI2B9ygz_8Kqa3B7VsODgkcWCz3KkenqbQXJt12ulWTBF5DKzYnroqbcOuohmB_I95SZZykEmMBCrI2acwjJR0xIlCNiybmp1-St3IkBHDKU01kvG8g_-MKV-jF_p3YLFevYhvYTdegsKMcWv2CiSz_cd4PknSGQY6HLHU136NqPAOrq1FYyILSSKE2EIa_rBc8TN4HFn-ym1CcIFw.2HGVjuSuswKBhupHhLIP1jNrxGxI5Glx8lrfYKNv0i0&dib_tag=se&keywords=pokemon+tcg+evolu%C3%A7%C3%B5es+prism%C3%A1ticas&qid=1787851216&sprefix=Pokemon+TCG+evolu%2Caps%2C223&sr=8-5&ufe=app_do%3Aamzn1.fos.e05b01e0-91a7-477e-a514-15a32325a6d6', 418 )
 
-
-
-#conexao.close()   # fecha a conexão
 
