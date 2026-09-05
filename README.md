@@ -1,4 +1,4 @@
-## Script em Python para monitoramento de preços de cartas pokemon 
+## Script em Python para monitoramento de preços de cartas pokemon e outros produtos 
 
 ## Como funciona
 
